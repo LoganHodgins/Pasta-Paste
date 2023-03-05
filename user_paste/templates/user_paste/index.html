@@ -10,5 +10,24 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Hello World</h2>
+    <nav class="main-nav"></nav>
+    <main>
+        <div class="paste-area">
+            <form action="" class="paste-form">
+                <label for="">Paste Title</label>
+                <input type="text">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <p>Paste Settings</p>
+                <label for="">Category</label>
+                <select><option value="">Plain Text</option></select>
+                <label for="">Type</label>
+                <select name="" id=""><option value="">Plain Text</option></select>
+                <label for="">Short Description</label>
+                <input type="text">
+                <button type="submit">Create Paste</button>
+            </form>
+        </div>
+    </main>
+    <footer class="main-footer">
+    </footer>
 {% endblock %}
