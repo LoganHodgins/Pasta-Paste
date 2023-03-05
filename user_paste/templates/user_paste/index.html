@@ -2,32 +2,52 @@
 {% load static %}
 
 {% block css_files %}
-    <link rel="stylesheet" href='{% static "user_paste/user_paste.css" %}'>
+<link rel="stylesheet" href='{% static "user_paste/user_paste.css" %}'>
+<link rel="stylesheet" href='{% static "user_paste/includes/header.css" %}'>
 {% endblock %}
 
 {% block page_title %}
-    Pasta Paste
+Pasta Paste
 {% endblock %}
 
 {% block content %}
-    <nav class="main-nav"></nav>
-    <main>
-        <div class="paste-area">
-            <form action="" class="paste-form">
-                <label for="">Paste Title</label>
+{% comment %} {% include "user_paste/includes/header.html" %} {% endcomment %}
+<header>
+    <nav class="main-nav">
+        <img class="logo" src="{% static "user_paste/images/food-tasty-pasta.svg" %}" alt="Pasta-Paste logo">
+        <p class="main-nav-name">Pata Paste</p>
+        <a class="main-nav-link">Create Paste</a>
+        <a class="main-nav-link">View Pastes</a>
+    </nav>
+</header>
+<main>
+    <div class="paste-area">
+        <form action="" class="paste-form">
+            <label for="">Paste Title</label>
+            <input type="text">
+            <textarea class="textarea" name="" id="" cols="30" rows="10"></textarea>
+            <p>Paste Settings</p>
+            <div class="hr-line"></div>
+            <div class="paste-form-item">
+                <label for="">Category:</label>
+                <select>
+                    <option value="">Plain Text</option>
+                </select>
+            </div>
+            <div class="paste-form-item">
+                <label for="">Type:</label>
+                <select name="" id="">
+                    <option value="">Plain Text</option>
+                </select>
+            </div>
+            <div class="paste-form-item">
+                <label for="">Short Description:</label>
                 <input type="text">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <p>Paste Settings</p>
-                <label for="">Category</label>
-                <select><option value="">Plain Text</option></select>
-                <label for="">Type</label>
-                <select name="" id=""><option value="">Plain Text</option></select>
-                <label for="">Short Description</label>
-                <input type="text">
-                <button type="submit">Create Paste</button>
-            </form>
-        </div>
-    </main>
-    <footer class="main-footer">
-    </footer>
+            </div>
+            <button type="submit">Create Paste</button>
+        </form>
+    </div>
+</main>
+<footer class="main-footer">
+</footer>
 {% endblock %}

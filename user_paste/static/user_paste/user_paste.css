@@ -1,9 +1,10 @@
 main {
-    background-color: darkgray;
+    background-color: #fff;
     width: 60%;
     margin: auto;
     padding: 0.5rem;
     height: 100vh;
+    border-radius: 1%;
 }
 
 .paste-area {
@@ -13,19 +14,41 @@ main {
 .paste-form label,
 .paste-form input,
 .paste-form textarea {
+    outline: none;
     display: block;
     width: 100%;
     margin: 1rem 0;
 }
 
-.main-nav {
-    background-color: darkgray;
-    height: 5rem;
-    margin-bottom: 1rem;
+.paste-form textarea,
+.paste-form input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 2px 2px rgb(0 0 0 / 10%);
+    padding: 6px 6px;
 }
 
-.main-footer {
-    background-color: darkgray;
-    margin-top: 1rem;
-    height: 5rem;
+.textarea {
+    height: 25vh;
+    resize: none;
+}
+
+.paste-form input[type="text"] {
+    display: block;
+    width: 50%;
+}
+
+.paste-form button,
+.paste-form select {
+    cursor: pointer;
+}
+
+.paste-form-item label,
+.paste-form-item input,
+.paste-form-item select {
+    display: inline;
+}
+
+.paste-form-item {
+    margin: 1rem 0;
 }
