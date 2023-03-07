@@ -9,6 +9,7 @@ main {
 
 .paste-area {
     margin: 1rem;
+    padding-top: 4rem;
 }
 
 .paste-form label,
