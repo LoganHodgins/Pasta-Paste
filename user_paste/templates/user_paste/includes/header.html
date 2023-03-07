@@ -1,8 +1,10 @@
+{% load static %}
+
 <header class="nav-header">
     <nav class="main-nav">
-        <img src="{{ nav.image.url }}" alt="{{ nav.alt }}">
-        <p>Pasta Paste</p>
-        <a>Create Paste</a>
-        <a>View Pastes</a>
+        <img class="logo" src="{% static "user_paste/images/food-tasty-pasta.svg" %}" alt="Pasta-Paste logo">
+        <p class="main-nav-name">Pasta Paste</p>
+        <a class="main-nav-link">Create Paste</a>
+        <a class="main-nav-link">View Pastes</a>
     </nav>
 </header>
