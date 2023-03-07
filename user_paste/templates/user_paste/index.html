@@ -4,6 +4,7 @@
 {% block css_files %}
 <link rel="stylesheet" href='{% static "user_paste/user_paste.css" %}'>
 <link rel="stylesheet" href='{% static "user_paste/includes/header.css" %}'>
+<link rel="stylesheet" href='{% static "user_paste/includes/footer.css" %}'>
 {% endblock %}
 
 {% block page_title %}
@@ -40,6 +41,5 @@ Pasta Paste
         </form>
     </div>
 </main>
-<footer class="main-footer">
-</footer>
+{% include "user_paste/includes/footer.html" %}
 {% endblock %}
