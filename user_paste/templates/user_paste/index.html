@@ -15,7 +15,11 @@ Pasta Paste
 {% block content %}
 {% include "user_paste/includes/header.html" %}
 <main>
-    <div class="paste-area">
+    <form method='POST'>
+        {% csrf_token %}
+        {{ PostForm }}
+    </form>
+    {% comment %} <div class="paste-area">
         <form action="" class="paste-form">
             <label for="">Paste Title</label>
             <input type="text">
@@ -40,7 +44,8 @@ Pasta Paste
             </div>
             <button type="submit">Create Paste</button>
         </form>
-    </div>
+    </div> {% endcomment %}
+
 </main>
 {% include "user_paste/includes/footer.html" %}
 {% endblock %}
