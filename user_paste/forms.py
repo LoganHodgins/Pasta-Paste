@@ -5,4 +5,11 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        exclude = ['post_author']
+        exclude = ['post_author', 'post_created_date']
+        labels = {
+            'post_title': 'Paste Title',
+            'post_content': '',
+            'post_description': 'Short Description',
+            'post_category': 'Category',
+            'post_type': 'Type',
+        }

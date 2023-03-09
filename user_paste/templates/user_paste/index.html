@@ -18,6 +18,7 @@ Pasta Paste
     <form method='POST'>
         {% csrf_token %}
         {{ PostForm }}
+        <button type="submit">Create Paste</button>
     </form>
     {% comment %} <div class="paste-area">
         <form action="" class="paste-form">
