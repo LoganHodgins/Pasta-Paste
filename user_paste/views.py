@@ -3,17 +3,18 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views import View
+from django.views.generic import ListView
 
 import string
 import random
 
 from .forms import PostForm
-from .models import User
+from .models import User, Post
 
 
 class UserPaste(View):
     def get(self, request):
-        return render(request, 'user_paste/index.html', {'PostForm': PostForm})
+        return render(request, 'user_paste/user_paste.html', {'PostForm': PostForm})
 
     def post(self, request):
         post_form = PostForm(request.POST)
@@ -27,4 +28,8 @@ class UserPaste(View):
 
             return HttpResponseRedirect(reverse('user-paste'))
 
-        return render(request, 'user_paste/index.html', {'PostForm': PostForm})
+        return render(request, 'user_paste/user_paste.html', {'PostForm': PostForm})
+
+class StartingPageView(ListView):
+    template_name = 'user_paste/index.html'
+    model = Post

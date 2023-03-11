@@ -9,3 +9,5 @@ TODO:
 * Add User Post list view page
 * Allow tabbing in textbox
 * Docker
+* Move header and footer to base.html template
+* Look into pageination

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href='{% static "user_paste/user_paste.css" %}'>
+<link rel="stylesheet" href='{% static "user_paste/main.css" %}'>
+<link rel="stylesheet" href='{% static "user_paste/includes/header.css" %}'>
+<link rel="stylesheet" href='{% static "user_paste/includes/footer.css" %}'>
+{% endblock %}
+
+{% block page_title %}
+Pasta Paste
+{% endblock %}
+
+{% block content %}
+{% include "user_paste/includes/header.html" %}
+<main>
+    <div class="paste-area">
+        <form action="{% url "user-paste" %}" method='POST' class="paste-form" autocomplete="off">
+            {% csrf_token %}
+            {{ PostForm.post_title.label_tag }}
+            {{ PostForm.post_title }}
+            {{ PostForm.post_content }}
+            <p>Paste Settings</p>
+            <div class="hr-line"></div>
+            <div class="paste-form-item">
+                {{ PostForm.post_category.label_tag }}
+                {{ PostForm.post_category }}
+            </div>
+            <div class="paste-form-item">
+                {{ PostForm.post_type.label_tag }}
+                {{ PostForm.post_type }}
+            </div>
+            <div class="paste-form-item">
+                {{ PostForm.post_description.label_tag }}
+                {{ PostForm.post_description }}
+            </div>
+            <button type="submit">Create Paste</button>
+        </form>
+    </div>
+</main>
+{% include "user_paste/includes/footer.html" %}
+{% endblock %}
