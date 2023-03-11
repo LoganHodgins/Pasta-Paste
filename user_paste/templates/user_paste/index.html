@@ -16,7 +16,7 @@ Pasta Paste
 {% include "user_paste/includes/header.html" %}
 <main>
     <div class="paste-area">
-        <form method='POST' class="paste-form">
+        <form action="{% url "user-paste" %}" method='POST' class="paste-form">
             {% csrf_token %}
             {{ PostForm.post_title.label_tag }}
             {{ PostForm.post_title }}
