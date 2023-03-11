@@ -4,6 +4,9 @@ class User(models.Model):
     user_name = models.CharField(max_length=20)
     # TODO: add password
 
+    def __str__(self):
+        return f'{self.user_name}'
+
 class Post(models.Model):
     # TODO: add post url later
     class Category(models.TextChoices):
@@ -24,3 +27,5 @@ class Post(models.Model):
     post_type = models.CharField(max_length=10, choices=Type.choices, default=Type.NOTES)
     post_created_date = models.DateField(auto_now=True)
     
+    def __str__(self):
+        return f'{self.post_title} by {self.post_author} created on {self.post_created_date}'
