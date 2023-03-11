@@ -29,4 +29,4 @@ class Post(models.Model):
     post_created_date = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return f'{self.post_title} by {self.post_author} created on {self.post_created_date.ctime()}'
+        return f'{self.post_title} by {self.post_author.user_name} created on {self.post_created_date.ctime()}'
