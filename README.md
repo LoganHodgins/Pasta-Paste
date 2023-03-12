@@ -8,8 +8,9 @@ TODO:
 * Add Post list view page
 * Add User Post list view page
 * Docker
-* Move header and footer to base.html template
 * Look into pageination
 * Add favicon
 * Make responsive
 * Add ability to click and view post
+* Add better styling
+* Add form validation

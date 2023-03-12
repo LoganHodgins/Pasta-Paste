@@ -4,8 +4,6 @@
 {% block css_files %}
 <link rel="stylesheet" href='{% static "user_paste/user_paste.css" %}'>
 <link rel="stylesheet" href='{% static "user_paste/main.css" %}'>
-<link rel="stylesheet" href='{% static "user_paste/includes/header.css" %}'>
-<link rel="stylesheet" href='{% static "user_paste/includes/footer.css" %}'>
 {% endblock %}
 
 {% block page_title %}
@@ -13,7 +11,6 @@ Pasta Paste
 {% endblock %}
 
 {% block content %}
-{% include "user_paste/includes/header.html" %}
 <main>
     <div class="paste-area">
         <form action="{% url "user-paste" %}" method='POST' class="paste-form" autocomplete="off">
@@ -39,6 +36,5 @@ Pasta Paste
         </form>
     </div>
 </main>
-{% include "user_paste/includes/footer.html" %}
 <script src="{% static "user_paste/user_paste.js" %}"></script>
 {% endblock %}
