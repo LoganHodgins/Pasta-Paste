@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views import View
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 import string
 import random
@@ -14,7 +14,7 @@ from .models import User, Post
 
 class UserPaste(View):
     def get(self, request):
-        return render(request, 'user_paste/user_paste.html', {'PostForm': PostForm})
+        return render(request, 'user_paste/user_paste.html', {'postForm': PostForm})
 
     def post(self, request):
         post_form = PostForm(request.POST)
@@ -28,7 +28,7 @@ class UserPaste(View):
 
             return HttpResponseRedirect(reverse('index'))
 
-        return render(request, 'user_paste/user_paste.html', {'PostForm': PostForm})
+        return render(request, 'user_paste/user_paste.html', {'postForm': PostForm})
 
 class StartingPageView(ListView):
     template_name = 'user_paste/index.html'
@@ -36,8 +36,8 @@ class StartingPageView(ListView):
     ordering = ['-post_created_date']
     context_object_name = 'pastes'
 
-class Paste(View):
-    def get(self, request, slug):
-        post = Post.objects.get(post_url_slug=slug)
-
-        return render(request, 'user_paste/paste.html')
+class Paste(DetailView):
+    template_name = 'user_paste/paste.html'
+    model = Post
+    context_object_name = 'post'
+    slug_field = 'post_url_slug'

@@ -33,7 +33,7 @@ class Post(models.Model):
     def generate_random_unique_slug(self):
         while True:
             random_str = get_random_string(8, '0123456789')
-            slug = self.post_author.user_name + '-' + random_str
+            slug = self.post_author.user_name.strip() + '-' + random_str
             rows_with_slug = type(self).objects.filter(post_url_slug=slug)
             if len(rows_with_slug) == 0:
                 return slug

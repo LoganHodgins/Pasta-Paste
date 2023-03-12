@@ -15,22 +15,22 @@ Pasta Paste
     <div class="paste-area">
         <form action="{% url "user-paste" %}" method='POST' class="paste-form" autocomplete="off">
             {% csrf_token %}
-            {{ PostForm.post_title.label_tag }}
-            {{ PostForm.post_title }}
-            {{ PostForm.post_content }}
+            {{ postForm.post_title.label_tag }}
+            {{ postForm.post_title }}
+            {{ postForm.post_content }}
             <p>Paste Settings</p>
             <div class="hr-line"></div>
             <div class="paste-form-item">
-                {{ PostForm.post_category.label_tag }}
-                {{ PostForm.post_category }}
+                {{ postForm.post_category.label_tag }}
+                {{ postForm.post_category }}
             </div>
             <div class="paste-form-item">
-                {{ PostForm.post_type.label_tag }}
-                {{ PostForm.post_type }}
+                {{ postForm.post_type.label_tag }}
+                {{ postForm.post_type }}
             </div>
             <div class="paste-form-item">
-                {{ PostForm.post_description.label_tag }}
-                {{ PostForm.post_description }}
+                {{ postForm.post_description.label_tag }}
+                {{ postForm.post_description }}
             </div>
             <button type="submit">Create Paste</button>
         </form>
