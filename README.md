@@ -14,3 +14,4 @@ TODO:
 * Add ability to click and view post
 * Add better styling
 * Add form validation
+* Add 404 page

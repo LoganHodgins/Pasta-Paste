@@ -18,7 +18,7 @@ class UserPaste(View):
 
     def post(self, request):
         post_form = PostForm(request.POST)
-
+        print(post_form.is_valid())
         if post_form.is_valid():
             anon_username = ''.join(random.choices(string.ascii_letters + string.digits, k=20))
             anon_user = User.objects.create(user_name=anon_username)

@@ -5,7 +5,7 @@ from .models import Post
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        exclude = ['post_author', 'post_created_date']
+        exclude = ['post_author', 'post_created_date', 'post_url_slug']
         labels = {
             'post_title': 'Paste Title',
             'post_content': '',

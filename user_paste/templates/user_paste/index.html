@@ -17,18 +17,7 @@ Pasta Paste
         <div class="hr-line"></div>
         <ul class='paste-list-item'>
             {% for post in pastes %}
-                <li>
-                    <div class="paste-card">
-                        <div class="paste-card-header">
-                            <p>{{ post.post_title }} created by: {{ post.post_author.user_name }}</p>
-                            <p><span class="paste-card-cat-type">{{ post.post_category }}</span> <span class="paste-card-cat-type">{{ post.post_type }}</span></p>
-                        </div>
-                        <div class="paste-card-footer">
-                            <p>{{ post.post_description }}</p>
-                            <p>Created On: {{post.post_created_date|date:"M d, Y" }} at {{post.post_created_date|date:"h:i A" }}</p>
-                        </div>
-                    </div>
-                </li>
+               {% include 'user_paste/includes/paste_card.html' %}
             {% endfor %}
         </ul>
     </div>
