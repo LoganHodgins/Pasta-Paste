@@ -35,3 +35,9 @@ class StartingPageView(ListView):
     model = Post
     ordering = ['-post_created_date']
     context_object_name = 'pastes'
+
+class Paste(View):
+    def get(self, request, slug):
+        post = Post.objects.get(post_url_slug=slug)
+
+        return render(request, 'user_paste/paste.html')

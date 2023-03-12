@@ -11,7 +11,10 @@ TODO:
 * Look into pageination
 * Add favicon
 * Make responsive
-* Add ability to click and view post
 * Add better styling
 * Add form validation
+* Fix list view page (maybe add pagination?????)
 * Add 404 page
+* upvotes
+* comments
+* Add validator to ensure that username cannot contain emojis
