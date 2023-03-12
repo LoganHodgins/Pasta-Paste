@@ -12,5 +12,4 @@ TODO:
 * Look into pageination
 * Add favicon
 * Make responsive
-* Emoji Support
 * Add ability to click and view post
