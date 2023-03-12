@@ -7,10 +7,10 @@ TODO:
 * Add user signin
 * Add Post list view page
 * Add User Post list view page
-* Allow tabbing in textbox
 * Docker
 * Move header and footer to base.html template
 * Look into pageination
 * Add favicon
 * Make responsive
 * Emoji Support
+* Add ability to click and view post

@@ -26,7 +26,7 @@ class UserPaste(View):
             post.post_author = anon_user
             post.save()
 
-            return HttpResponseRedirect(reverse('user-paste'))
+            return HttpResponseRedirect(reverse('index'))
 
         return render(request, 'user_paste/user_paste.html', {'PostForm': PostForm})
 

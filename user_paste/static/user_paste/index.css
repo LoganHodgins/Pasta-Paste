@@ -34,3 +34,7 @@ main {
     border-radius: 6px;
     padding: 0.3rem;
 }
+
+.paste-list-item {
+    list-style-type: none;
+}
