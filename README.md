@@ -13,3 +13,4 @@ TODO:
 * Add favicon
 * Make responsive
 * Add ability to click and view post
+* Added a title banner
