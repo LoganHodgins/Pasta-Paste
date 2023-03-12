@@ -4,7 +4,7 @@ main {
     margin: auto;
     padding: 0.5rem;
     height: 100vh;
-    border-radius: 1%;
+    border-radius: 6px;
 }
 
 .paste-area {

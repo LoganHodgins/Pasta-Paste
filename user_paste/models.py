@@ -23,7 +23,7 @@ class Post(models.Model):
 
     post_title = models.CharField(max_length=50)
     post_author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    post_content = models.TextField(max_length=500)
+    post_content = models.TextField(max_length=4096)
     post_description = models.CharField(max_length=50)
     post_category = models.CharField(max_length=14, choices=Category.choices, default=Category.PLAIN_TEXT) 
     post_type = models.CharField(max_length=14, choices=Type.choices, default=Type.NOTES)

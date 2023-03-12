@@ -33,3 +33,5 @@ class UserPaste(View):
 class StartingPageView(ListView):
     template_name = 'user_paste/index.html'
     model = Post
+    ordering = ['-post_created_date']
+    context_object_name = 'pastes'

@@ -12,3 +12,5 @@ TODO:
 * Move header and footer to base.html template
 * Look into pageination
 * Add favicon
+* Make responsive
+* Emoji Support

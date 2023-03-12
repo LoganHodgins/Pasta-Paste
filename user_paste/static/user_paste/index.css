@@ -1,14 +1,36 @@
-div {
-    position: relative;
-    z-index: -999;
+main {
+    background-color: #fff;
+    width: 60%;
     height: 100vh;
-    width: 100%;
-    background-color: #ccc;
+    margin: auto;
+    border-radius: 6px;
 }
 
-h2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.paste-list {
+    margin: 1rem;
+    padding-top: 4rem;
+}
+
+.paste-card {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.paste-card-header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+.paste-card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.paste-card-cat-type {
+    background: green;
+    border-radius: 6px;
+    padding: 0.3rem;
 }
