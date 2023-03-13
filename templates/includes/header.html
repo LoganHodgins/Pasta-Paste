@@ -1,10 +1,21 @@
 {% load static %}
-
-<header class="nav-header">
-    <nav class="main-nav">
-        <img class="logo" src="{% static "user_paste/images/food-tasty-pasta.svg" %}" alt="Pasta-Paste logo">
-        <a class="main-nav-name main-nav-link" href="{% url 'index' %}">Pasta Paste</a>
-        <a class="main-nav-link" href="{% url 'user-paste' %}">Create Paste</a>
-        <a class="main-nav-link" href="">View Pastes</a>
-    </nav>
-</header>
+<div class="fixed-top">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}">
+        <img src="{% static "user_paste/images/food-tasty-pasta.svg" %}" alt="Pasta-Paste logo">
+        Pasta Paste
+      </a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'user-paste' %}">Create Paste</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">View Pastes</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

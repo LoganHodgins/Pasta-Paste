@@ -1,43 +1,16 @@
-.main-nav {
-    display: flex;
-    position: relative;
-    left: 20vw;
-    gap: 20px;
-    align-items: center;
-    height: 5rem;
+.navbar {
+    padding-left: 20rem !important;
 }
 
-.nav-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    height: 5rem;
-    margin-bottom: 1rem;
+img {
+    height: 35px;
+    width: 35px;
 }
 
-.main-nav-name,
-.main-nav-link {
-    display: inline;
+.nav-link {
+    transition: none !important;
 }
 
-.main-nav-name {
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
-.main-nav-link {
-    color: #000;
-    text-decoration: none;
-}
-
-.main-nav-link:hover {
-    color: #b21807;
-}
-
-.logo {
-    display: inline-block;
-    height: 60%;
+.nav-link:hover {
+    color: black !important;
 }
