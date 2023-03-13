@@ -11,3 +11,4 @@ TODO:
 * Add 404 page
 * Add validator to ensure that username cannot contain emojis
 * Remove page_title block from base.html
+* Add search features
