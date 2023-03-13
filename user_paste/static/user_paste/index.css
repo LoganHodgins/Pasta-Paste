@@ -1,9 +1,12 @@
 main {
     background-color: #fff;
     width: 60%;
-    height: 100vh;
     margin: auto;
     border-radius: 6px;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .paste-list {
@@ -11,30 +14,17 @@ main {
     padding-top: 4rem;
 }
 
-.paste-card {
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 1rem;
-    margin: 1rem;
-}
-
-.paste-card-header {
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5rem 0;
-}
-
-.paste-card-footer {
+.card-header {
     display: flex;
     justify-content: space-between;
 }
 
-.paste-card-cat-type {
-    background: green;
-    border-radius: 6px;
-    padding: 0.3rem;
+.card a {
+    text-decoration: none;
+    color: black;
 }
 
-.paste-list-item {
-    list-style-type: none;
+.card {
+    max-width: 50rem;
+    margin: 2rem;
 }
