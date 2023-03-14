@@ -1,5 +1,10 @@
 body {
     background: #b21807 !important;
+    height: 100%;
+}
+
+html {
+    height: 100%;
 }
 
 * {
