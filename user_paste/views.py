@@ -35,6 +35,7 @@ class StartingPageView(ListView):
     model = Post
     ordering = ['-post_created_date']
     context_object_name = 'pastes'
+    paginate_by = 6
 
 class Paste(DetailView):
     template_name = 'user_paste/paste.html'

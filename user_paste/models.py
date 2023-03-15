@@ -2,7 +2,7 @@ from django.utils.crypto import get_random_string
 from django.db import models
 
 class User(models.Model):
-    user_name = models.CharField(max_length=20, unique=True)
+    user_name = models.CharField(max_length=20, unique=True, db_index=True)
     user_created_date = models.DateTimeField(auto_now_add=True)
     # TODO: add password
 
@@ -28,7 +28,7 @@ class Post(models.Model):
     post_category = models.CharField(max_length=14, choices=Category.choices, default=Category.PLAIN_TEXT) 
     post_type = models.CharField(max_length=14, choices=Type.choices, default=Type.NOTES)
     post_created_date = models.DateTimeField(auto_now_add=True)
-    post_url_slug = models.SlugField(null=True, unique=True)
+    post_url_slug = models.SlugField(null=True, unique=True, db_index=True)
     
     def generate_random_unique_slug(self):
         while True:
