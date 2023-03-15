@@ -4,7 +4,6 @@ TODO:
 * Add user signin
 * Add User Post list view page
 * Docker
-* download and server bootstrap
 * Improve form page
 * Add 404 page
 * Add search features
