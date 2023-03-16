@@ -1,4 +1,5 @@
 from django.utils.crypto import get_random_string
+from django.utils import timezone
 from django.db import models
 
 class User(models.Model):
@@ -27,7 +28,7 @@ class Post(models.Model):
     post_description = models.CharField(max_length=50)
     post_category = models.CharField(max_length=14, choices=Category.choices, default=Category.PLAIN_TEXT) 
     post_type = models.CharField(max_length=14, choices=Type.choices, default=Type.NOTES)
-    post_created_date = models.DateTimeField(auto_now_add=True)
+    post_created_date = models.DateTimeField(default=timezone.now)
     post_url_slug = models.SlugField(null=True, unique=True, db_index=True)
     
     def generate_random_unique_slug(self):

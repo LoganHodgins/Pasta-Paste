@@ -1,4 +1,5 @@
-.navbar {
+nav.navbar {
+    background-color: #fff !important;
     padding-left: 20rem !important;
 }
 
