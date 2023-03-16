@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views import View
 from django.views.generic import ListView, DetailView
+from django.core.paginator import Paginator
 
 import string
 import random
@@ -36,6 +37,13 @@ class StartingPageView(ListView):
     ordering = ['-post_created_date']
     context_object_name = 'pastes'
     paginate_by = 6
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        paginator = Paginator(Post.objects.all(), 6)
+        page = context['page_obj']
+        context['first_pages'] = paginator.get_elided_page_range(number=page.number, on_ends=0)
+        return context
 
 class Paste(DetailView):
     template_name = 'user_paste/paste.html'

@@ -29,6 +29,11 @@ ul {
     margin: 2rem;
 }
 
+nav.page-nav {
+    position: relative;
+    left: 4rem;
+}
+
 .page-nav {
     padding: 1rem;
 }

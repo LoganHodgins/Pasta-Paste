@@ -25,10 +25,10 @@
                 <li class="page-item"><a class="page-link disabled" href="#">Previous</a></li>
             {% endif %}
 
-            {% for page in page_obj.paginator.page_range %}
+            {% for page in first_pages %}
                 {% if page == page_obj.number %}
                     <li class="page-item"><a class="page-link active" href="?page={{ page }}">{{ page }}<a/></li>
-                {% else %}
+                {% elif page != paginator.ELLIPSIS %}
                     <li class="page-item"><a class="page-link" href="?page={{page}}">{{ page }}<a/></li>
                 {% endif %}
             {% endfor %}
