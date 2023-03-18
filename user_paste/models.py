@@ -5,7 +5,6 @@ from django.db import models
 class User(models.Model):
     user_name = models.CharField(max_length=20, unique=True, db_index=True)
     user_created_date = models.DateTimeField(auto_now_add=True)
-    # TODO: add password
 
     def __str__(self):
         return f'{self.user_name} created on {self.user_created_date.ctime()}'

@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views import View
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView
 from django.core.paginator import Paginator
 
 import string
@@ -50,3 +51,7 @@ class Paste(DetailView):
     model = Post
     context_object_name = 'post'
     slug_field = 'post_url_slug'
+
+class Login(View):
+    def get(self, request):
+        return render(request, 'user_paste/login.html')

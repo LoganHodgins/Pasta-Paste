@@ -13,7 +13,7 @@ class Command(BaseCommand):
         parser.add_argument('--num_user_posts', type=int, required=True)
 
     def handle(self, *args, **options):
-        created_date = timezone.now()
+        created_date = timezone.now() - datetime.timedelta(weeks=100)
         for i in range(options['num_users']):
             user_name = get_random_string(20, string.ascii_letters + string.digits)
             user = User.objects.create(user_name=user_name)

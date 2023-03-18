@@ -1,10 +1,5 @@
 main {
-    background-color: #fff;
-    width: 60%;
-    margin: auto;
-    padding: 0.5rem;
-    height: 100vh;
-    border-radius: 6px;
+    min-height: 100vh;
 }
 
 .paste-area {

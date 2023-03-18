@@ -6,22 +6,20 @@
 {% endblock %}
 
 {% block content %}
-<main>
-    <div class="card">
-        <div class="card-header">
-            <div class="title">
-                <h2 class="card-title">{{ post.post_title }}</h2>
-                <p><span class="badge text-bg-secondary">{{ post.post_category }}</span> <span class="badge text-bg-secondary">{{ post.post_type }}</span>
-            </div>
-            <p>{{ post.post_description }}</p>
-            <p class="card-subtitle mb-2 text-muted">Created by: {{ post.post_author.user_name }}</p></p>
+<div class="card">
+    <div class="card-header">
+        <div class="title">
+            <h2 class="card-title">{{ post.post_title }}</h2>
+            <p><span class="badge text-bg-secondary">{{ post.post_category }}</span> <span class="badge text-bg-secondary">{{ post.post_type }}</span>
         </div>
-        <div class="card-body">
-            <p>{{ post.post_content }}</p>
-        </div>
-        <div class="card-footer">
-            <p>Posted on: {{ post.post_created_date }}</p>
-        </div>
-    </div>  
-</main>
+        <p>{{ post.post_description }}</p>
+        <p class="card-subtitle mb-2 text-muted">Created by: {{ post.post_author.user_name }}</p></p>
+    </div>
+    <div class="card-body">
+        <p>{{ post.post_content }}</p>
+    </div>
+    <div class="card-footer">
+        <p>Posted on: {{ post.post_created_date }}</p>
+    </div>
+</div>  
 {% endblock %}

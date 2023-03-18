@@ -7,30 +7,28 @@
 {% endblock %}
 
 {% block content %}
-<main>
-    <div class="paste-area">
-        <form action="{% url "user-paste" %}" method='POST' class="paste-form" autocomplete="off">
-            {% csrf_token %}
-            {{ postForm.post_title.label_tag }}
-            {{ postForm.post_title }}
-            {{ postForm.post_content }}
-            <p>Paste Settings</p>
-            <div class="hr-line"></div>
-            <div class="paste-form-item">
-                {{ postForm.post_category.label_tag }}
-                {{ postForm.post_category }}
-            </div>
-            <div class="paste-form-item">
-                {{ postForm.post_type.label_tag }}
-                {{ postForm.post_type }}
-            </div>
-            <div class="paste-form-item">
-                {{ postForm.post_description.label_tag }}
-                {{ postForm.post_description }}
-            </div>
-            <button type="submit">Create Paste</button>
-        </form>
-    </div>
-</main>
+<div class="paste-area">
+    <form action="{% url "user-paste" %}" method='POST' class="paste-form" autocomplete="off">
+        {% csrf_token %}
+        {{ postForm.post_title.label_tag }}
+        {{ postForm.post_title }}
+        {{ postForm.post_content }}
+        <p>Paste Settings</p>
+        <div class="hr-line"></div>
+        <div class="paste-form-item">
+            {{ postForm.post_category.label_tag }}
+            {{ postForm.post_category }}
+        </div>
+        <div class="paste-form-item">
+            {{ postForm.post_type.label_tag }}
+            {{ postForm.post_type }}
+        </div>
+        <div class="paste-form-item">
+            {{ postForm.post_description.label_tag }}
+            {{ postForm.post_description }}
+        </div>
+        <button type="submit">Create Paste</button>
+    </form>
+</div>
 <script src="{% static "user_paste/user_paste.js" %}"></script>
 {% endblock %}

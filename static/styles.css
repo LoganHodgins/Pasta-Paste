@@ -11,3 +11,10 @@ html {
     box-sizing: border-box;
     margin: 0;
 }
+
+main {
+    background-color: #fff;
+    width: 60%;
+    margin: auto;
+    border-radius: 6px;
+}
