@@ -3,13 +3,12 @@
 
 {% block css_files %}
 <link rel="stylesheet" href='{% static "user_paste/index.css" %}'>
-<link rel="stylesheet" href='{% static "user_paste/main.css" %}'>
 {% endblock %}
 
 {% block content %}
 <div class="paste-list">
     <h2>Recent User Pastes</h2>
-    <div class="hr-line"></div>
+    <hr/>
     <ul>
         {% for post in pastes %}
            {% include 'user_paste/includes/paste_card.html' %}

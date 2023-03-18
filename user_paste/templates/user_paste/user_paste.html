@@ -1,33 +1,24 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% load crispy_forms_tags %}
+
 {% block css_files %}
 <link rel="stylesheet" href='{% static "user_paste/user_paste.css" %}'>
-<link rel="stylesheet" href='{% static "user_paste/main.css" %}'>
 {% endblock %}
 
 {% block content %}
 <div class="paste-area">
     <form action="{% url "user-paste" %}" method='POST' class="paste-form" autocomplete="off">
         {% csrf_token %}
-        {{ postForm.post_title.label_tag }}
-        {{ postForm.post_title }}
-        {{ postForm.post_content }}
-        <p>Paste Settings</p>
-        <div class="hr-line"></div>
-        <div class="paste-form-item">
-            {{ postForm.post_category.label_tag }}
-            {{ postForm.post_category }}
-        </div>
-        <div class="paste-form-item">
-            {{ postForm.post_type.label_tag }}
-            {{ postForm.post_type }}
-        </div>
-        <div class="paste-form-item">
-            {{ postForm.post_description.label_tag }}
-            {{ postForm.post_description }}
-        </div>
-        <button type="submit">Create Paste</button>
+        {{ postForm.post_title|as_crispy_field }}
+        {{ postForm.post_content|as_crispy_field }}
+        <h4>Settings</h4>
+        <hr/>
+        {{ postForm.post_description|as_crispy_field }}
+        {{ postForm.post_category|as_crispy_field }}
+        {{ postForm.post_type|as_crispy_field }}
+        <button type="submit" class="btn btn-primary">Create Paste</button>
     </form>
 </div>
 <script src="{% static "user_paste/user_paste.js" %}"></script>

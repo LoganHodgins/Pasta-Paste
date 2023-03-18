@@ -2,49 +2,25 @@ main {
     min-height: 100vh;
 }
 
+.asteriskField {
+    display: none;
+}
+
 .paste-area {
     margin: 1rem;
     padding-top: 4rem;
 }
 
-.paste-form label,
-.paste-form input,
-.paste-form textarea {
-    outline: none;
-    display: block;
-    width: 100%;
-    margin: 1rem 0;
-}
-
-.paste-form textarea,
-.paste-form input[type="text"] {
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-shadow: inset 0 2px 2px rgb(0 0 0 / 10%);
-    padding: 6px 6px;
-}
-
-.paste-form textarea {
+textarea.textarea {
     height: 25vh;
     resize: none;
 }
 
-.paste-form input[type="text"] {
-    display: block;
-    width: 50%;
+#id_post_description {
+    max-width: 25rem;
 }
 
-.paste-form button,
-.paste-form select {
-    cursor: pointer;
-}
-
-.paste-form-item label,
-.paste-form-item input,
-.paste-form-item select {
+#id_post_category, #id_post_type {
     display: inline;
-}
-
-.paste-form-item {
-    margin: 1rem 0;
+    width: 15rem;
 }
