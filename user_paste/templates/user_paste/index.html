@@ -8,34 +8,38 @@
 {% block content %}
 <h2 class="paste-list-title">Recent User Pastes</h2>
 <hr/>
-<div class="paste-list-container">
-    <ul class="paste-list">
-        {% for post in pastes %}
-           {% include 'user_paste/includes/paste_card.html' %}
-        {% endfor %}
-    </ul>
-    <nav class="page-nav">
-        <ul class="pagination">
-            {% if page_obj.has_previous %}
-                <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
-            {% else %}
-                <li class="page-item"><a class="page-link disabled" href="#">Previous</a></li>
-            {% endif %}
-    
-            {% for page in first_pages %}
-                {% if page == page_obj.number %}
-                    <li class="page-item"><a class="page-link active" href="?page={{ page }}">{{ page }}<a/></li>
-                {% elif page != paginator.ELLIPSIS %}
-                    <li class="page-item"><a class="page-link" href="?page={{page}}">{{ page }}<a/></li>
-                {% endif %}
+{% if post_count == 0 %}
+    <h2 class="label-none-found">No Posts Found!</h2>
+{% else %}
+    <div class="paste-list-container">
+        <ul class="paste-list">
+            {% for post in pastes %}
+               {% include 'user_paste/includes/paste_card.html' %}
             {% endfor %}
-            
-            {% if page_obj.has_next %}
-                <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
-            {% else %}
-                <li class="page-item"><a class="page-link disabled" href="#">Next</a></li>
-            {% endif %}
         </ul>
-    </nav>
-</div>
+        <nav class="page-nav">
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                {% else %}
+                    <li class="page-item"><a class="page-link disabled" href="#">Previous</a></li>
+                {% endif %}
+            
+                {% for page in first_pages %}
+                    {% if page == page_obj.number %}
+                        <li class="page-item"><a class="page-link active" href="?page={{ page }}">{{ page }}<a/></li>
+                    {% elif page != paginator.ELLIPSIS %}
+                        <li class="page-item"><a class="page-link" href="?page={{page}}">{{ page }}<a/></li>
+                    {% endif %}
+                {% endfor %}
+                        
+                {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                {% else %}
+                    <li class="page-item"><a class="page-link disabled" href="#">Next</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+{% endif %}
 {% endblock %}

@@ -43,6 +43,7 @@ class StartingPageView(ListView):
         paginator = Paginator(Post.objects.all(), 6)
         page = context['page_obj']
         context['first_pages'] = paginator.get_elided_page_range(number=page.number, on_each_side=2, on_ends=0)
+        context['post_count'] = len(Post.objects.all())
         return context
 
 class Paste(DetailView):

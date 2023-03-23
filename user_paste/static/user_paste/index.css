@@ -1,3 +1,7 @@
+main {
+    min-height: 100vh;
+}
+
 .paste-list {
     list-style-type: none;
     margin: 0 0.6rem;
@@ -32,4 +36,8 @@
 
 .page-nav {
     padding: 1rem;
+}
+
+.label-none-found {
+    text-align: center;
 }
