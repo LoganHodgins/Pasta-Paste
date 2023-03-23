@@ -1,0 +1,6 @@
+services:
+  pasta_paste:
+    image: django/pasta_paste
+    build: .
+    ports: 
+      - '8000:8000'
