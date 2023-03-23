@@ -28,7 +28,7 @@ class UserPaste(View):
             post.save()
 
             return HttpResponseRedirect(reverse('index'))
-    
+
         return render(request, 'user_paste/user_paste.html', {'postForm': PostForm})
 
 class StartingPageView(ListView):
@@ -42,7 +42,7 @@ class StartingPageView(ListView):
         context = super().get_context_data(**kwargs)
         paginator = Paginator(Post.objects.all(), 6)
         page = context['page_obj']
-        context['first_pages'] = paginator.get_elided_page_range(number=page.number, on_ends=0)
+        context['first_pages'] = paginator.get_elided_page_range(number=page.number, on_each_side=2, on_ends=0)
         return context
 
 class Paste(DetailView):

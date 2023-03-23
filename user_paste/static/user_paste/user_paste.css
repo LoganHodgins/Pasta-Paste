@@ -6,9 +6,14 @@ main {
     display: none;
 }
 
+.paste-area-title {
+    padding-top: 5rem;
+    margin: 0 0.6rem;
+}
+
 .paste-area {
     margin: 1rem;
-    padding-top: 4rem;
+    height: 90vh;
 }
 
 textarea.textarea {

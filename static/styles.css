@@ -14,7 +14,13 @@ html {
 
 main {
     background-color: #fff;
-    width: 60%;
-    margin: auto;
+    width: 100vw;
     border-radius: 6px;
+}
+
+@media (min-width: 47rem) {
+    main {
+        width: 60%;
+        margin: auto;
+    }
 }

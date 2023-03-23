@@ -8,6 +8,8 @@
 {% endblock %}
 
 {% block content %}
+<h2 class="paste-area-title">Create Paste</h2>
+<hr />
 <div class="paste-area">
     <form action="{% url "user-paste" %}" method='POST' class="paste-form" autocomplete="off">
         {% csrf_token %}
