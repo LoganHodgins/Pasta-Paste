@@ -1,13 +1,7 @@
 from django.utils.crypto import get_random_string
 from django.utils import timezone
 from django.db import models
-
-class User(models.Model):
-    user_name = models.CharField(max_length=20, unique=True, db_index=True)
-    user_created_date = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f'{self.user_name} created on {self.user_created_date.ctime()}'
+from django.contrib.auth.models import User
 
 class Post(models.Model):
     class Category(models.TextChoices):
@@ -33,7 +27,7 @@ class Post(models.Model):
     def generate_random_unique_slug(self):
         while True:
             random_str = get_random_string(8, '0123456789')
-            slug = self.post_author.user_name.strip() + '-' + random_str
+            slug = self.post_author.username.strip() + '-' + random_str
             rows_with_slug = type(self).objects.filter(post_url_slug=slug)
             if len(rows_with_slug) == 0:
                 return slug
@@ -45,4 +39,4 @@ class Post(models.Model):
         super(Post, self).save(*args, **kwargs)
 
     def __str__(self):
-        return f'{self.post_title} by {self.post_author.user_name} created on {self.post_created_date.ctime()}'
+        return f'{self.post_title} by {self.post_author.username} created on {self.post_created_date.ctime()}'

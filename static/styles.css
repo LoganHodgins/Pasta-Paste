@@ -18,6 +18,11 @@ main {
     border-radius: 6px;
 }
 
+.asteriskField {
+    display: none;
+}
+
+
 @media (min-width: 47rem) {
     main {
         width: 60%;

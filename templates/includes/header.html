@@ -14,12 +14,18 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'user-paste' %}">Create Paste</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">View Pastes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
-          </li>
+          {% if request.user.username %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'view-pastes' %}">View Pastes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            </li>
+          {% endif %}
         </ul>
       </div>
     </div>

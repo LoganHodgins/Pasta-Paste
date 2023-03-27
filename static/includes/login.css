@@ -1,0 +1,36 @@
+main {
+    min-height: 100vh;
+}
+
+form {
+    margin-bottom: 1rem;
+}
+
+.login-title {
+    padding-top: 5rem;
+    margin: 0 0.6rem;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.login {
+    margin: 1rem;
+}
+
+p {
+    display: inline;
+}
+
+@media (min-width: 47rem) {
+    input[id^="id_"] {
+        max-width: 20rem;
+    }
+
+    .login {
+        width: 22rem;
+        margin: auto;
+    }
+}

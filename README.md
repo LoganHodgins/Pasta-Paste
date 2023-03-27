@@ -1,4 +1,11 @@
 # Pasta-Paste
 TODO:
-* Add user signin
-* Add User Post list view page
+* add realistic fake db generation
+
+Features:
+* Django Crispy
+* Bootstrap styling
+* Django Auth sign up and login
+* View Other Posts
+* View Own Posts
+* Responsive Design

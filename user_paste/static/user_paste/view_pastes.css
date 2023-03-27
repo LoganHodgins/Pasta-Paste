@@ -1,0 +1,43 @@
+main {
+    min-height: 100vh;
+}
+
+.paste-list {
+    list-style-type: none;
+    margin: 0 0.6rem;
+    padding: 0;
+}
+
+.paste-list-title { 
+    padding-top: 5rem;
+    margin: 0 0.6rem;
+}
+
+.paste-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
+.card {
+    max-width: 50rem;
+    margin-top: 2rem;
+}
+
+.page-nav {
+    padding: 1rem;
+}
+
+.label-none-found {
+    text-align: center;
+}

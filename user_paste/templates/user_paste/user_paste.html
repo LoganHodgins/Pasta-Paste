@@ -10,18 +10,22 @@
 {% block content %}
 <h2 class="paste-area-title">Create Paste</h2>
 <hr />
-<div class="paste-area">
-    <form action="{% url "user-paste" %}" method='POST' class="paste-form" autocomplete="off">
-        {% csrf_token %}
-        {{ postForm.post_title|as_crispy_field }}
-        {{ postForm.post_content|as_crispy_field }}
-        <h4>Settings</h4>
-        <hr/>
-        {{ postForm.post_description|as_crispy_field }}
-        {{ postForm.post_category|as_crispy_field }}
-        {{ postForm.post_type|as_crispy_field }}
-        <button type="submit" class="btn btn-primary">Create Paste</button>
-    </form>
-</div>
+{% if user %}
+    <div class="paste-area">
+        <form action="{% url "user-paste" %}" method='POST' class="paste-form" autocomplete="off">
+            {% csrf_token %}
+            {{ postForm.post_title|as_crispy_field }}
+            {{ postForm.post_content|as_crispy_field }}
+            <h4>Settings</h4>
+            <hr/>
+            {{ postForm.post_description|as_crispy_field }}
+            {{ postForm.post_category|as_crispy_field }}
+            {{ postForm.post_type|as_crispy_field }}
+            <button type="submit" class="btn btn-primary">Create Paste</button>
+        </form>
+    </div>
+{% else %}
+    <h2 class="login-text">Login Needed to Post</h2>
+{% endif %}
 <script src="{% static "user_paste/user_paste.js" %}"></script>
 {% endblock %}

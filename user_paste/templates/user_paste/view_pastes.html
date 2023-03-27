@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_files %}
+<link rel="stylesheet" href='{% static "user_paste/view_pastes.css" %}'>
+{% endblock %}
+
+{% block content %}
+{% if anon %}
+    <h2 class="label-none-found paste-list-title">Sign in to View Your Pastes</h2>
+{% else %}
+    <h2 class="paste-list-title">Pastes by {{ request.user.username }}</h2>
+    <hr />
+    {% if posts %}
+        <div class="paste-list-container">
+            <ul class="paste-list">
+                {% for post in posts %}
+                    {% include 'user_paste/includes/paste_card.html' %}
+                {% endfor %}
+            </ul>
+            <nav class="page-nav">
+                <ul class="pagination">
+                    {% if page_obj.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link disabled" href="#">Previous</a></li>
+                    {% endif %}
+                
+                    {% for page in first_pages %}
+                        {% if page == page_obj.number %}
+                            <li class="page-item"><a class="page-link active" href="?page={{ page }}">{{ page }}<a/></li>
+                        {% elif page != paginator.ELLIPSIS %}
+                            <li class="page-item"><a class="page-link" href="?page={{page}}">{{ page }}<a/></li>
+                        {% endif %}
+                    {% endfor %}
+                            
+                    {% if page_obj.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link disabled" href="#">Next</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    {% else %}
+        <h2 class="label-none-found">You've haven't made any pastes yet!</h2>
+    {% endif %}
+{% endif %}
+{% endblock %}

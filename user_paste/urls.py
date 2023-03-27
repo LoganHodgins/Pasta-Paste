@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.StartingPageView.as_view(), name='index'),
     path('user-paste', views.UserPaste.as_view(), name='user-paste'),
     path('paste/<slug:slug>', views.Paste.as_view(), name='paste-page'),
-    path('login', views.Login.as_view(), name='login')
+    path('signup', views.SignUp.as_view(), name='signup'),
+    path('view-pastes', views.ViewPaste.as_view(), name='view-pastes')
 ]
