@@ -1,4 +1,5 @@
 # Pasta-Paste
+made only for learning DO NOT REVIEW
 TODO:
 * add realistic fake db generation
 
